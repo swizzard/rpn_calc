@@ -36,13 +36,13 @@ impl Op {
         Ok(v1 + v2)
     }
     fn subtract(v1: Num, v2: Num) -> Result<Num, String> {
-        Ok(v1 - v2)
+        Ok(v2 - v1)
     }
     fn multiply(v1: Num, v2: Num) -> Result<Num, String> {
         Ok(v1 * v2)
     }
     fn divide(v1: Num, v2: Num) -> Result<Num, String> {
-        v1.checked_div(v2)
+        v2.checked_div(v1)
             .ok_or_else(|| "Division by zero!".to_string())
     }
 }
